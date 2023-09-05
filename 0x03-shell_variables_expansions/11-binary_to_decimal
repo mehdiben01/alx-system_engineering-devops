@@ -1,17 +1,2 @@
 #!/bin/bash
-
-# Check if the BINARY environment variable is set
-if [ -z "$BINARY" ]; then
-    echo "Error: BINARY environment variable is not set."
-    exit 1
-fi
-
-# Use parameter expansion to strip the '0b' prefix if present (optional)
-BINARY=${BINARY#0b}
-
-# Convert the binary number to decimal and display the result
-decimal=$((2#$BINARY))
-
-# Display the decimal result
-echo "$decimal"
-
+echo $((2#BINARY)o)
